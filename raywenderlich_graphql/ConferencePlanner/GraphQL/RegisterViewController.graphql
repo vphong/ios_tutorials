@@ -1,0 +1,16 @@
+# 1. create signature of function
+mutation CreateAttendee($name: String!) {
+  # 2. use mutation exposed by GraphQL API
+  createAttendee(name: $name) {
+    # 3. define payload - data you want server to return
+    id
+    name
+  }
+}
+
+mutation UpdateAttendeeName($id: ID!, $newName: String!) {
+  updateAttendee(id: $id, name: $newName) {
+    id
+    name
+  }
+}

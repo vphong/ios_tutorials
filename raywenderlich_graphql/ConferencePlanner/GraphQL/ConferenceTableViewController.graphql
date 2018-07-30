@@ -1,0 +1,18 @@
+# fragements: reusable sub-parts that bundle fields of a GraphQL type
+# enhances reusability of info returned by GraphQL
+fragment ConferenceDetails on Conference {
+  id
+  name
+  city
+  year
+  attendees {
+    id
+  }
+}
+
+# fragments can be used in any query or mutation 
+query AllConferences {
+  allConferences {
+    ...ConferenceDetails
+  }
+}
